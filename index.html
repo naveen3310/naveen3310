@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>naveen@github: ~</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#060a0f;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;cursor:text}
+  a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline}
+  #terminal{width:100%;max-width:820px;background:#0d1117;border:1px solid #D9770644;border-radius:10px;box-shadow:0 0 40px #D9770622,0 0 80px #00000088;overflow:hidden;display:flex;flex-direction:column}
+  #titlebar{background:#161b22;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #D9770633;flex-shrink:0}
+  .dot{width:12px;height:12px;border-radius:50%}
+  #titlepath{margin-left:10px;color:#6b7280;font-size:13px}
+  #livebadge{margin-left:auto;color:#D97706;font-size:11px;opacity:.7}
+  #body{padding:18px 20px 10px;min-height:460px;max-height:72vh;overflow-y:auto;font-size:13px;line-height:1.6;flex:1}
+  #body::-webkit-scrollbar{width:4px}
+  #body::-webkit-scrollbar-track{background:#0d1117}
+  #body::-webkit-scrollbar-thumb{background:#D9770655;border-radius:2px}
+  #ascii{color:#D97706;font-size:8.2px;line-height:1.2;margin-bottom:12px;white-space:pre;overflow:hidden}
+  .bootline{color:#6b7280;margin-bottom:2px}
+  .entry{margin-bottom:10px}
+  .prompt{display:flex;gap:6px;margin-bottom:3px;flex-wrap:wrap;align-items:baseline}
+  .p-user{color:#22c55e}.p-sep{color:#6b7280}.p-path{color:#06b6d4}.p-dollar{color:#e5e7eb}.p-cmd{color:#e5e7eb}
+  .output{padding-left:8px}
+  .err{color:#f87171;padding-left:8px}
+  .ls-grid{display:flex;flex-wrap:wrap}
+  .ls-item{width:50%;display:flex;align-items:center;gap:6px;line-height:1.9;padding-right:8px}
+  .ls-dir{color:#06b6d4;font-weight:bold}.ls-file{color:#e5e7eb}
+  .lang-badge{font-size:10px;color:#06b6d4;background:#1f2937;padding:1px 5px;border-radius:3px;white-space:nowrap}
+  .repo-info{border-left:2px solid #D97706;padding-left:12px;margin-top:6px}
+  .repo-desc{color:#e5e7eb;margin-bottom:4px}
+  .repo-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;margin-bottom:4px}
+  .repo-topics{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;margin-bottom:6px}
+  .topic{font-size:11px;color:#a78bfa;background:#1e1b4b;padding:1px 7px;border-radius:10px}
+  .repo-hint{color:#6b7280;font-size:11px;margin-top:4px}
+  .repo-hint span{color:#D97706}
+  .cat-content{color:#e5e7eb;white-space:pre-wrap;line-height:1.7}
+  .lines-out div{line-height:1.7}
+  .help-grid{margin-top:2px}
+  .help-row{display:flex;line-height:1.9}
+  .help-cmd{color:#D97706;font-weight:bold;min-width:200px}
+  .help-desc{color:#6b7280}
+  .help-tip{color:#6b7280;font-size:12px;margin-top:8px}
+  .help-tip span{color:#D97706}
+  .welcome-text{color:#6b7280;margin-bottom:8px}
+  .welcome-divider{color:#6b7280;font-size:12px;margin-bottom:10px}
+  .welcome-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .chip{background:transparent;border:1px solid #D9770655;color:#D97706;font-family:inherit;font-size:12px;padding:4px 12px;border-radius:4px;cursor:pointer;transition:all .15s}
+  .chip:hover{background:#D9770622;border-color:#D97706}
+  .welcome-note{color:#6b7280;font-size:11px}
+  .cd-hint{color:#6b7280;font-size:11px;margin-bottom:3px;padding-left:8px}
+  .cd-hint span{color:#06b6d4}
+  #inputline{display:flex;gap:6px;align-items:center;margin-top:6px;flex-wrap:wrap}
+  #userinput{flex:1;min-width:120px;background:transparent;border:none;outline:none;color:#e5e7eb;font-family:inherit;font-size:13px;caret-color:#D97706}
+  .cursor{display:inline-block;width:7px;height:15px;background:#D97706;animation:blink 1s step-end infinite;vertical-align:middle}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  #footer{background:#161b22;border-top:1px solid #D9770622;padding:7px 16px;display:flex;justify-content:space-between;font-size:11px;color:#6b7280;flex-shrink:0}
+  #footer span:last-child{color:#D97706}
+  .tree-line{line-height:1.7}
+</style>
+</head>
+<body>
+
+<div id="terminal">
+  <div id="titlebar">
+    <div class="dot" style="background:#ef4444"></div>
+    <div class="dot" style="background:#f59e0b"></div>
+    <div class="dot" style="background:#22c55e"></div>
+    <span id="titlepath">naveen@github: <span id="titlecwd" style="color:#06b6d4">~</span></span>
+    <span id="livebadge">● live</span>
+  </div>
+
+  <div id="body">
+    <div id="ascii">███╗   ██╗ █████╗ ██╗   ██╗███████╗███████╗███╗   ██╗
+████╗  ██║██╔══██╗██║   ██║██╔════╝██╔════╝████╗  ██║
+██╔██╗ ██║███████║██║   ██║█████╗  █████╗  ██╔██╗ ██║
+██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══╝  ██╔══╝  ██║╚██╗██║
+██║ ╚████║██║  ██║ ╚████╔╝ ███████╗███████╗██║ ╚████║
+╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═══╝</div>
+    <div id="history"></div>
+    <div id="inputline" style="display:none">
+      <span class="p-user">naveen@github</span><span class="p-sep">:</span><span class="p-path" id="promptpath">~</span><span class="p-dollar">$</span>
+      <input id="userinput" spellcheck="false" autocomplete="off" autofocus/>
+      <span class="cursor"></span>
+    </div>
+  </div>
+
+  <div id="footer">
+    <span>🟠 naveen@github: <span id="footercwd" style="color:#06b6d4">~</span></span>
+    <span>Tab to complete · ↑↓ history · Enter to run</span>
+  </div>
+</div>
+
+<script>
+// ─── Virtual Filesystem ────────────────────────────────────────────────────────
+const FS = {
+  "~": { type:"dir", children:["projects","skills","about.txt","links.txt","philosophy.txt"] },
+  "~/projects": { type:"dir", children:["process-resource-allocation-simulator","instagram-image-scraper","machine-learning-experiments","naveen3310"] },
+  "~/projects/process-resource-allocation-simulator": {
+    type:"dir", children:["README.md","src/","Makefile"],
+    meta:{ desc:"C++ simulation of concurrent resource allocation inspired by OS scheduling & deadlock problems.", lang:"C++", stars:12, url:"https://github.com/naveen3310/process-resource-allocation-simulator", topics:["C++","OS","Concurrency","Deadlock","Scheduling"], updated:"2 days ago" }
+  },
+  "~/projects/instagram-image-scraper": {
+    type:"dir", children:["README.md","scraper.py","requirements.txt","utils/"],
+    meta:{ desc:"Backend script for extracting high-resolution images from Instagram URLs & profiles.", lang:"Python", stars:8, url:"https://github.com/naveen3310/instagram-image-scraper", topics:["Python","Scraping","BeautifulSoup","Requests"], updated:"1 week ago" }
+  },
+  "~/projects/machine-learning-experiments": {
+    type:"dir", children:["README.md","notebooks/","datasets/","models/","requirements.txt"],
+    meta:{ desc:"Classical ML implementations and dataset experiments from scratch — no sklearn shortcuts.", lang:"Python", stars:21, url:"https://github.com/naveen3310/machine-learning-experiments", topics:["Python","ML","NLP","NumPy","Pandas"], updated:"3 days ago" }
+  },
+  "~/projects/naveen3310": {
+    type:"dir", children:["README.md"],
+    meta:{ desc:"This GitHub profile README — the terminal you're using right now!", lang:"Markdown", stars:5, url:"https://github.com/naveen3310/naveen3310", topics:["Profile","README","Terminal"], updated:"today" }
+  },
+  "~/skills": { type:"dir", children:["languages.txt","backend.txt","ai-ml.txt","systems.txt","tools.txt"] },
+};
+
+const FILES = {
+  "about.txt": `name     : naveen\nhandle   : naveen3310\nrole     : Backend Developer | Systems Enthusiast\n────────────────────────────────────────────\nBuilding tools that matter.\nUnderstanding systems deeply.\nBased somewhere with good internet & better coffee.`,
+  "links.txt": `github   → https://github.com/naveen3310\nlinkedin → add-your-linkedin-url\n────────────────────────────────────────────\nFeel free to reach out or star a repo!`,
+  "philosophy.txt": `> build useful tools\n> understand systems deeply\n> learn continuously\n────────────────────────────────────────────\n"The best code is the code that solves the right problem."`,
+  "languages.txt": `C++          ████████████░░░░  75%\nPython       ██████████████░░  85%\nJavaScript   ████████████░░░░  72%\nJava         ████████░░░░░░░░  50%`,
+  "backend.txt": `Node.js      ████████████░░░░  75%\nExpress      ██████████░░░░░░  62%\nREST APIs    █████████████░░░  80%`,
+  "ai-ml.txt": `Machine Learning  ████████████░░░░  72%\nNLP               ██████████░░░░░░  60%\nScikit-learn      ████████████░░░░  74%\nNumPy / Pandas    █████████████░░░  80%`,
+  "systems.txt": `Linux         ██████████████░░  85%\nConcurrency   ████████████░░░░  72%\nNetworking    ██████████░░░░░░  60%\nOS Concepts   █████████████░░░  78%`,
+  "tools.txt": `Git    ██████████████░░  88%\nDocker ████████████░░░░  72%\nVSCode █████████████████  95%`,
+  "Makefile": `build:\n\tg++ -std=c++17 -O2 -o main src/main.cpp\n\nrun:\n\t./main\n\nclean:\n\trm -f main`,
+  "requirements.txt": `requests==2.31.0\nbeautifulsoup4==4.12.2\nPillow==10.0.0\ntqdm==4.66.1`,
+  "scraper.py": `import requests\nfrom bs4 import BeautifulSoup\n\ndef scrape_images(url: str) -> list[str]:\n    """Extract high-res image URLs from Instagram."""\n    headers = {"User-Agent": "Mozilla/5.0"}\n    res = requests.get(url, headers=headers)\n    soup = BeautifulSoup(res.text, "html.parser")\n    return [img["src"] for img in soup.find_all("img")]`,
+};
+
+function getReadme(cwd) {
+  const name = cwd.split("/").pop();
+  const node = FS[cwd];
+  if (!node || !node.meta) return `# ${name}\n\nNo README found.`;
+  const m = node.meta;
+  return `# ${name}\n\n${m.desc}\n\n## Language\n${m.lang}\n\n## Topics\n${m.topics.join("  ·  ")}\n\n## Links\n${m.url}\n\n⭐ ${m.stars} stars  ·  updated ${m.updated}`;
+}
+
+// ─── State ─────────────────────────────────────────────────────────────────────
+let cwd = "~";
+let cmdHistory = [];
+let histIdx = -1;
+
+// ─── Filesystem helpers ─────────────────────────────────────────────────────────
+function resolvePath(from, to) {
+  if (!to || to === "~") return "~";
+  if (to === "..") {
+    if (from === "~") return "~";
+    const p = from.split("/"); p.pop();
+    return p.join("/") || "~";
+  }
+  if (to.startsWith("~/")) return to;
+  return (from + "/" + to).replace("~//","~/");
+}
+
+function getNode(path) { return FS[path] || null; }
+
+function getFileContent(name, dir) {
+  if (name === "README.md") return getReadme(dir);
+  return FILES[name] || "(binary or empty file)";
+}
+
+// ─── HTML builders ─────────────────────────────────────────────────────────────
+function h(tag, cls, html, extra) {
+  return `<${tag}${cls?' class="'+cls+'"':''}${extra||''}>${html}</${tag}>`;
+}
+
+function buildLsOutput(items, path) {
+  const node = getNode(path);
+  let rows = items.map(item => {
+    const clean = item.replace(/\/$/,"");
+    const child = getNode(path+"/"+clean);
+    const isDir = child && child.type === "dir";
+    const badge = child && child.meta ? `<span class="lang-badge">${child.meta.lang}</span>` : "";
+    const cls = isDir ? "ls-dir" : "ls-file";
+    const icon = isDir ? "📁" : "📄";
+    return `<div class="ls-item"><span class="${cls}">${icon} ${item}</span>${badge}</div>`;
+  }).join("");
+  let repoInfo = "";
+  if (node && node.meta) {
+    const m = node.meta;
+    const topics = m.topics.map(t=>`<span class="topic">${t}</span>`).join("");
+    repoInfo = `<div class="repo-info">
+      <div class="repo-desc">${m.desc}</div>
+      <div class="repo-meta">
+        <span style="color:#06b6d4">⬡ ${m.lang}</span>
+        <span style="color:#D97706">⭐ ${m.stars}</span>
+        <span style="color:#6b7280">🕐 ${m.updated}</span>
+      </div>
+      <div class="repo-topics">${topics}</div>
+      <div><a href="${m.url}" target="_blank">↗ ${m.url}</a></div>
+      <div class="repo-hint">hint: <span>cat README.md</span> · <span>open</span> · <span>cd ..</span></div>
+    </div>`;
+  }
+  return `<div class="output"><div class="ls-grid">${rows}</div>${repoInfo}</div>`;
+}
+
+function buildCatOutput(content) {
+  return `<div class="output"><pre class="cat-content">${escHtml(content)}</pre></div>`;
+}
+
+function buildTreeOutput(path) {
+  const node = getNode(path);
+  if (!node || node.type !== "dir") return `<div class="err">tree: not a directory</div>`;
+  const name = path === "~" ? "~" : path.split("/").pop();
+  let lines = [`<div class="tree-line" style="color:#06b6d4;font-weight:bold">${name}</div>`];
+  (node.children||[]).forEach((child,i) => {
+    const isLast = i === node.children.length-1;
+    const conn = isLast ? "└── " : "├── ";
+    const childNode = getNode(path+"/"+child.replace(/\/$/,""));
+    const isDir = childNode && childNode.type === "dir";
+    const color = isDir ? "#06b6d4" : "#e5e7eb";
+    const bold = isDir ? "font-weight:bold;" : "";
+    lines.push(`<div class="tree-line" style="color:${color};${bold}">${escHtml(conn+child)}</div>`);
+  });
+  return `<div class="output">${lines.join("")}</div>`;
+}
+
+function buildHelpOutput() {
+  const cmds = [
+    ["ls","list files / repos in current directory"],
+    ["cd &lt;dir&gt;","enter a directory or repo"],
+    ["cd ..","go back up"],
+    ["pwd","print current path"],
+    ["cat &lt;file&gt;","read a file's contents"],
+    ["tree","show directory structure"],
+    ["open","open repo on GitHub (inside a repo dir)"],
+    ["whoami","about naveen"],
+    ["skills","tech stack overview"],
+    ["clear","clear the terminal"],
+    ["help","show this menu"],
+  ];
+  const rows = cmds.map(([c,d])=>`<div class="help-row"><span class="help-cmd">${c}</span><span class="help-desc">${d}</span></div>`).join("");
+  return `<div class="output"><div style="color:#6b7280;margin-bottom:6px">available commands:</div><div class="help-grid">${rows}</div><div class="help-tip">tip: try <span>ls</span> → <span>cd projects</span> → <span>ls</span> → <span>cd &lt;repo&gt;</span></div></div>`;
+}
+
+function buildWelcomeOutput() {
+  const chips = [
+    {label:"ls",hint:"see what's here"},
+    {label:"cd projects",hint:"browse repos"},
+    {label:"whoami",hint:"about naveen"},
+    {label:"cat about.txt",hint:"read bio"},
+    {label:"help",hint:"all commands"},
+  ];
+  const btns = chips.map(c=>`<button class="chip" onclick="runChip('${c.label}')" title="${c.hint}">${c.label}</button>`).join("");
+  return `<div class="output">
+    <div class="welcome-text">Welcome to naveen's interactive terminal. Navigate like a real filesystem.</div>
+    <div class="welcome-divider">── Quick start ──────────────────────────────</div>
+    <div class="welcome-chips">${btns}</div>
+    <div class="welcome-note">Tab completion works · ↑↓ for history</div>
+  </div>`;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+// ─── Command processor ──────────────────────────────────────────────────────────
+function processCmd(raw, fromCwd) {
+  const parts = raw.trim().split(/\s+/);
+  const cmd = parts[0].toLowerCase();
+  const arg = parts.slice(1).join(" ");
+
+  if (cmd === "ls") {
+    const target = arg ? resolvePath(fromCwd, arg) : fromCwd;
+    const node = getNode(target);
+    if (!node) return { html:`<div class="err">ls: ${escHtml(arg||".")}: No such file or directory</div>` };
+    if (node.type !== "dir") return { html:`<div class="err">ls: ${escHtml(arg)}: Not a directory</div>` };
+    return { html: buildLsOutput(node.children, target) };
+  }
+
+  if (cmd === "cd") {
+    const target = resolvePath(fromCwd, arg||"~");
+    const node = getNode(target);
+    if (!node) return { html:`<div class="err">cd: ${escHtml(arg)}: No such file or directory</div>` };
+    if (node.type !== "dir") return { html:`<div class="err">cd: ${escHtml(arg)}: Not a directory</div>` };
+    return { cd: target };
+  }
+
+  if (cmd === "pwd") {
+    return { html:`<div class="output" style="color:#06b6d4">${escHtml(fromCwd)}</div>` };
+  }
+
+  if (cmd === "cat") {
+    if (!arg) return { html:`<div class="err">cat: missing file operand</div>` };
+    const node = getNode(fromCwd);
+    if (!node || !node.children) return { html:`<div class="err">cat: ${escHtml(arg)}: No such file</div>` };
+    const clean = arg.replace(/\/$/,"");
+    if (!node.children.includes(clean) && !node.children.includes(clean+"/"))
+      return { html:`<div class="err">cat: ${escHtml(arg)}: No such file in current directory</div>` };
+    return { html: buildCatOutput(getFileContent(clean, fromCwd)) };
+  }
+
+  if (cmd === "tree") {
+    return { html: buildTreeOutput(fromCwd) };
+  }
+
+  if (cmd === "open" || cmd === "xdg-open") {
+    const node = getNode(fromCwd);
+    if (node && node.meta) {
+      window.open(node.meta.url, "_blank");
+      return { html:`<div class="output"><span style="color:#22c55e">Opening </span><a href="${node.meta.url}" target="_blank">${node.meta.url}</a> <span style="color:#6b7280">↗</span></div>` };
+    }
+    return { html:`<div class="err">open: no URL associated with current directory</div>` };
+  }
+
+  if (cmd === "whoami") {
+    return { html:`<div class="output lines-out">
+      <div style="color:#D97706;font-weight:bold">naveen</div>
+      <div style="color:#6b7280">──────────────────────────────</div>
+      <div style="color:#e5e7eb">Backend Developer &amp; Systems Enthusiast</div>
+      <div style="color:#6b7280">Building tools that matter. Understanding systems deeply.</div>
+    </div>` };
+  }
+
+  if (cmd === "skills") {
+    return { html:`<div class="output lines-out">
+      <div style="color:#D97706;font-weight:bold">Languages   C++ · Python · JavaScript · Java</div>
+      <div style="color:#06b6d4">Backend     Node.js · Express</div>
+      <div style="color:#22c55e">AI / ML     Machine Learning · NLP · Scikit-learn</div>
+      <div style="color:#a78bfa">Systems     Linux · Concurrency · Networking</div>
+      <div style="color:#6b7280">Tools       Git · Docker · VS Code</div>
+      <div style="color:#6b7280">──────────────────────────────</div>
+      <div style="color:#6b7280">tip: cd ~/skills &amp;&amp; ls  →  see skill files</div>
+    </div>` };
+  }
+
+  if (cmd === "help") {
+    return { html: buildHelpOutput() };
+  }
+
+  if (cmd === "clear") {
+    return { clear: true };
+  }
+
+  return { html:`<div class="err">${escHtml(cmd)}: command not found  (try 'help')</div>` };
+}
+
+// ─── DOM helpers ────────────────────────────────────────────────────────────────
+const histEl = document.getElementById("history");
+const inputEl = document.getElementById("userinput");
+const inputLine = document.getElementById("inputline");
+const promptPath = document.getElementById("promptpath");
+const titleCwd = document.getElementById("titlecwd");
+const footerCwd = document.getElementById("footercwd");
+const bodyEl = document.getElementById("body");
+
+function updateCwd(newCwd) {
+  cwd = newCwd;
+  promptPath.textContent = newCwd;
+  titleCwd.textContent = newCwd;
+  footerCwd.textContent = newCwd;
+}
+
+function appendEntry(cmdText, fromCwd, outputHtml, isCdHint) {
+  const wrap = document.createElement("div");
+  wrap.className = "entry";
+  if (cmdText !== null && !isCdHint) {
+    wrap.innerHTML = `<div class="prompt">
+      <span class="p-user">naveen@github</span><span class="p-sep">:</span>
+      <span class="p-path">${escHtml(fromCwd)}</span><span class="p-dollar">$</span>
+      <span class="p-cmd">${escHtml(cmdText)}</span>
+    </div>` + outputHtml;
+  } else if (isCdHint) {
+    wrap.innerHTML = `<div class="cd-hint">→ entered <span>${escHtml(cwd)}</span></div>` + outputHtml;
+  } else {
+    wrap.innerHTML = outputHtml;
+  }
+  histEl.appendChild(wrap);
+  scrollBottom();
+}
+
+function scrollBottom() {
+  setTimeout(() => bodyEl.scrollTop = bodyEl.scrollHeight, 20);
+}
+
+function clearHistory() {
+  histEl.innerHTML = "";
+}
+
+// ─── Run command ────────────────────────────────────────────────────────────────
+function run(raw, fromCwd) {
+  if (!raw || !raw.trim()) return;
+  const effectiveCwd = fromCwd !== undefined ? fromCwd : cwd;
+  cmdHistory.unshift(raw.trim());
+  histIdx = -1;
+
+  const result = processCmd(raw.trim(), effectiveCwd);
+
+  if (result.clear) {
+    clearHistory();
+    return;
+  }
+
+  if (result.cd) {
+    const prevCwd = effectiveCwd;
+    updateCwd(result.cd);
+    // silently show prompt line for cd command
+    const wrap = document.createElement("div");
+    wrap.className = "entry";
+    wrap.innerHTML = `<div class="prompt">
+      <span class="p-user">naveen@github</span><span class="p-sep">:</span>
+      <span class="p-path">${escHtml(prevCwd)}</span><span class="p-dollar">$</span>
+      <span class="p-cmd">${escHtml(raw.trim())}</span>
+    </div>`;
+    histEl.appendChild(wrap);
+    // auto ls the new dir
+    const lsResult = processCmd("ls", result.cd);
+    appendEntry(null, result.cd, lsResult.html || "", true);
+    return;
+  }
+
+  appendEntry(raw.trim(), effectiveCwd, result.html || "");
+}
+
+window.runChip = function(cmd) { run(cmd, cwd); inputEl.focus(); };
+
+// ─── Input handling ─────────────────────────────────────────────────────────────
+inputEl.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    const raw = inputEl.value;
+    inputEl.value = "";
+    histIdx = -1;
+    run(raw, cwd);
+  } else if (e.key === "Tab") {
+    e.preventDefault();
+    const completed = tabComplete(inputEl.value, cwd);
+    if (completed) inputEl.value = completed;
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    histIdx = Math.min(histIdx+1, cmdHistory.length-1);
+    inputEl.value = cmdHistory[histIdx] || "";
+  } else if (e.key === "ArrowDown") {
+    e.preventDefault();
+    histIdx = Math.max(histIdx-1, -1);
+    inputEl.value = histIdx === -1 ? "" : cmdHistory[histIdx];
+  }
+});
+
+document.body.addEventListener("click", () => inputEl.focus());
+
+// ─── Tab completion ──────────────────────────────────────────────────────────────
+function tabComplete(val, fromCwd) {
+  const parts = val.split(/\s+/);
+  const cmd = parts[0];
+  const partial = parts[parts.length-1] || "";
+  const allCmds = ["ls","cd","pwd","cat","tree","open","whoami","skills","help","clear"];
+  if (parts.length === 1) {
+    const m = allCmds.filter(c=>c.startsWith(partial));
+    return m.length===1 ? m[0] : null;
+  }
+  const node = getNode(fromCwd);
+  if (!node || !node.children) return null;
+  const m = node.children.filter(c=>c.startsWith(partial));
+  return m.length===1 ? cmd+" "+m[0] : null;
+}
+
+// ─── Boot sequence ───────────────────────────────────────────────────────────────
+const bootLines = [
+  { text:"Initializing naveen@github...", delay:0 },
+  { text:"Mounting ~/projects...  ✓", delay:350 },
+  { text:"Mounting ~/skills...  ✓", delay:650 },
+  { text:"Loading shell environment...  ✓", delay:950 },
+  { text:"", delay:1150 },
+];
+
+bootLines.forEach(({text,delay}) => {
+  setTimeout(()=>{
+    const d = document.createElement("div");
+    d.className = "bootline";
+    d.textContent = text;
+    histEl.appendChild(d);
+    scrollBottom();
+  }, delay);
+});
+
+setTimeout(()=>{
+  appendEntry(null, "~", buildWelcomeOutput());
+  inputLine.style.display = "flex";
+  inputEl.focus();
+}, 1400);
+</script>
+</body>
+</html>
