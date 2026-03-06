@@ -1,153 +1,185 @@
-<!-- NAVEEN ASCII BANNER -->
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=D97706&height=120&section=header&text=&fontSize=0" />
+
+</div>
+
 <div align="center">
 
 ```
-███╗   ██╗ █████╗ ██╗   ██╗███████╗███████╗███╗   ██╗
-████╗  ██║██╔══██╗██║   ██║██╔════╝██╔════╝████╗  ██║
-██╔██╗ ██║███████║██║   ██║█████╗  █████╗  ██╔██╗ ██║
-██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══╝  ██╔══╝  ██║╚██╗██║
-██║ ╚████║██║  ██║ ╚████╔╝ ███████╗███████╗██║ ╚████║
-╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═══╝
+ ███╗   ██╗ █████╗ ██╗   ██╗███████╗███████╗███╗   ██╗
+ ████╗  ██║██╔══██╗██║   ██║██╔════╝██╔════╝████╗  ██║
+ ██╔██╗ ██║███████║██║   ██║█████╗  █████╗  ██╔██╗ ██║
+ ██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══╝  ██╔══╝  ██║╚██╗██║
+ ██║ ╚████║██║  ██║ ╚████╔╝ ███████╗███████╗██║ ╚████║
+ ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═══╝
 ```
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=16&duration=3000&pause=1000&color=D97706&center=true&vCenter=true&width=500&lines=naveen%40github%3A~%24+whoami;Backend+Developer+%7C+Systems+Enthusiast;naveen%40github%3A~%24+./run_life.sh" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=15&pause=1500&color=D97706&center=true&vCenter=true&width=600&lines=Software+Engineer+%7C+Builder+%7C+Problem+Solver;Backend+%C2%B7+Machine+Learning+%C2%B7+Systems;Turning+ideas+into+working+software." alt="Typing SVG" />
 
-<!-- 🖥️ LIVE TERMINAL BUTTON — update URL after enabling GitHub Pages -->
 <br/>
-<a href="https://naveen3310.github.io/naveen3310/">
-  <img src="https://img.shields.io/badge/-%F0%9F%96%A5%EF%B8%8F%20Launch%20Interactive%20Terminal-D97706?style=for-the-badge&labelColor=0d1117&color=D97706" alt="Launch Terminal"/>
-</a>
+
+[![Profile Views](https://komarev.com/ghpvc/?username=naveen3310&color=D97706&style=flat-square&label=profile+views)](https://github.com/naveen3310)
+&nbsp;
+[![GitHub followers](https://img.shields.io/github/followers/naveen3310?color=D97706&style=flat-square&label=followers&logo=github)](https://github.com/naveen3310?tab=followers)
 
 </div>
 
+<br/>
+
 ---
 
-<img src="https://img.shields.io/badge/-%F0%9F%96%A5%EF%B8%8F%20Terminal-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
+## &nbsp;`$ whoami`
 
-```bash
-naveen@github:~$ whoami
-naveen
-
-naveen@github:~$ role
-Backend Developer | Systems Enthusiast
-
-naveen@github:~$ interests
-  Artificial Intelligence
-  Machine Learning
-  Natural Language Processing
-  Algorithms
-  Distributed Systems
-
-naveen@github:~$ current_focus
-  Building backend systems
-  Learning applied ML
-  Exploring system design
+```yaml
+name        : Naveen Kumar
+handle      : naveen3310
+title       : Software Engineer — Backend · ML · Systems
+stack       : Builds backends, trains models, ships software end-to-end
+location    : India
+status      : Open to opportunities
 ```
 
+<br/>
+
 ---
 
-<img src="https://img.shields.io/badge/-%E2%9A%99%EF%B8%8F%20Tech%20Stack-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
+## &nbsp;`$ cat skills.txt`
 
-```bash
-Languages
-  C++ | Python | JavaScript | Java
+<br/>
 
-Backend
-  Node.js | Express
+<table align="center">
+<tr>
+<td valign="top" width="25%">
 
-AI / Data
-  Machine Learning | NLP
+**Languages**
 
-Systems
-  Linux | Concurrency | Networking
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 
-Tools
-  Git | Docker | VS Code
+</td>
+<td valign="top" width="25%">
+
+**Backend & Frameworks**
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![REST APIs](https://img.shields.io/badge/REST_APIs-D97706?style=flat-square&logo=json&logoColor=white)
+
+</td>
+<td valign="top" width="25%">
+
+**Databases**
+
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+
+**AI / ML**
+
+![ML](https://img.shields.io/badge/Machine_Learning-D97706?style=flat-square&logo=pytorch&logoColor=white)
+![NLP](https://img.shields.io/badge/NLP-D97706?style=flat-square&logo=openai&logoColor=white)
+
+</td>
+<td valign="top" width="25%">
+
+**Tools & DevOps**
+
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+## &nbsp;`$ ls projects/`
+
+<!-- AUTO-REPOS-START -->
+| Project | Stack | Description |
+|---------|-------|-------------|
+| [**process-resource-allocation-simulator**](https://github.com/naveen3310/process-resource-allocation-simulator) | `C++` | Concurrent resource allocation simulation inspired by OS scheduling & deadlock problems |
+| [**instagram-image-scraper**](https://github.com/naveen3310/instagram-image-scraper) | `Python` | Backend script for extracting high-resolution images from URLs and profiles |
+| [**machine-learning-experiments**](https://github.com/naveen3310/machine-learning-experiments) | `Python` | Classical ML implementations and dataset experiments from scratch |
+<!-- AUTO-REPOS-END -->
+
+<br/>
+
+---
+
+## &nbsp;`$ git log --stat`
+
+<br/>
+
+<div align="center">
+
+<!-- Streak — demolab hosts this independently, works for all accounts -->
+<img src="https://streak-stats.demolab.com?user=naveen3310&theme=github-dark-blue&background=0D1117&border=30363D&ring=D97706&fire=D97706&currStreakLabel=D97706&sideLabels=9ca3af&dates=6b7280&sideNums=e5e7eb&currStreakNum=e5e7eb" />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<!-- Activity graph — works as long as account exists -->
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=naveen3310&bg_color=0d1117&color=D97706&line=D97706&point=e5e7eb&area=true&area_color=D9770615&border_color=30363d&hide_border=false" />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<!-- These two work once you have public repos with code -->
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=naveen3310&show_icons=true&theme=github_dark&title_color=D97706&icon_color=D97706&text_color=9ca3af&bg_color=0d1117&border_color=30363d&count_private=true&rank_icon=github&hide_border=false" />
+&nbsp;
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=naveen3310&layout=compact&theme=github_dark&title_color=D97706&text_color=9ca3af&bg_color=0d1117&border_color=30363d&langs_count=6&hide_border=false" />
+
+</div>
+
+<br/>
+
+---
+
+## &nbsp;`$ curl naveen.dev/contact`
+
+<br/>
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-naveen3310-D97706?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117)](https://github.com/naveen3310)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117)](https://linkedin.com/in/your-linkedin)
+&nbsp;
+[![Email](https://img.shields.io/badge/Email-Say_Hello-D97706?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117)](mailto:your@email.com)
+
+</div>
+
+<br/>
+
+---
+
+<div align="center">
+
+```
+> build useful tools.   > understand systems deeply.   > learn continuously.
 ```
 
-<p align="center">
-  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black"/>
-</p>
+<br/>
 
----
+<img src="https://capsule-render.vercel.app/api?type=waving&color=D97706&height=80&section=footer" />
 
-<img src="https://img.shields.io/badge/-%F0%9F%93%82%20Recent%20Projects-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
-
-<!--REPOS_START-->
-<div align="center">
-  <a href="https://github.com/naveen3310/process-resource-allocation-simulator">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=naveen3310&repo=process-resource-allocation-simulator&theme=dark&title_color=D97706&icon_color=D97706&text_color=c9d1d9&bg_color=0d1117&border_color=D97706" />
-  </a>
-  <a href="https://github.com/naveen3310/instagram-image-scraper">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=naveen3310&repo=instagram-image-scraper&theme=dark&title_color=D97706&icon_color=D97706&text_color=c9d1d9&bg_color=0d1117&border_color=D97706" />
-  </a>
-  <a href="https://github.com/naveen3310/machine-learning-experiments">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=naveen3310&repo=machine-learning-experiments&theme=dark&title_color=D97706&icon_color=D97706&text_color=c9d1d9&bg_color=0d1117&border_color=D97706" />
-  </a>
-</div>
-<!--REPOS_END-->
-
----
-
-<img src="https://img.shields.io/badge/-%F0%9F%93%8A%20GitHub%20Stats-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=naveen3310&show_icons=true&theme=dark&title_color=D97706&icon_color=D97706&text_color=c9d1d9&bg_color=0d1117&border_color=D97706&count_private=true&include_all_commits=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=naveen3310&layout=compact&theme=dark&title_color=D97706&text_color=c9d1d9&bg_color=0d1117&border_color=D97706&langs_count=8" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=naveen3310&theme=dark&background=0d1117&ring=D97706&fire=D97706&currStreakLabel=D97706&sideLabels=c9d1d9&dates=c9d1d9&border=D97706" />
-</div>
-
----
-
-<img src="https://img.shields.io/badge/-%F0%9F%93%88%20Activity%20Graph-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=naveen3310&theme=react-dark&bg_color=0d1117&color=D97706&line=D97706&point=ffffff&area=true&hide_border=false&border_color=D97706" />
-</div>
-
----
-
-<img src="https://img.shields.io/badge/-%F0%9F%94%97%20Connect-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
-
-```bash
-naveen@github:~$ links
-
-github   → github.com/naveen3310
-linkedin → add-your-linkedin-url
-```
-
-<p align="center">
-  <a href="https://github.com/naveen3310">
-    <img src="https://img.shields.io/badge/GitHub-naveen3310-D97706?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/>
-  </a>
-  <a href="https://linkedin.com/in/your-linkedin">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-</p>
-
----
-
-<img src="https://img.shields.io/badge/-%F0%9F%A7%A0%20Philosophy-D97706?style=for-the-badge&labelColor=0d0d0d&color=D97706" />
-
-```bash
-> build useful tools
-> understand systems deeply
-> learn continuously
-```
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=naveen3310&color=D97706&style=flat-square&label=profile+views" />
-  <br/><br/>
-  <sub>🟠 <b>powered by terminal</b></sub>
 </div>
